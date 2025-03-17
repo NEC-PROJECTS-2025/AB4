@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Evaluation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        /* Content Styling */
+        .content {
+            padding: 100px 20px 20px;
+            margin: 0 auto;
+            width: 90%; /* Ensures content spans nearly the full page */
+            max-width: 1200px; /* Restricts content to a readable width */
+            text-align: justify; /* Spreads content evenly across left and right */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center; /* Center the heading */
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        /* Table Styling */
+        .metrics-table {
+            margin: 20px auto; /* Centers the table */
+            border-collapse: collapse;
+            width: 80%; /* Adjust table width */
+            max-width: 900px;
+            text-align: left;
+        }
+
+        .metrics-table th, .metrics-table td {
+            border: 1px solid #ccc;
+            padding: 12px 15px;
+            text-align: center; /* Center-align the content in cells */
+        }
+
+        .metrics-table th {
+            background-color: #004d99;
+            color: white;
+        }
+
+        .metrics-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About Project</a>
+        <a href="/index">Predictions</a>
+        <a href="/evaluation">Model Evaluation</a>
+        <a href="/flowchart">Flowchart</a>
+    </div>
+
+    <div class="content">
+        <h1>Model Evaluation</h1>
+        <p>
+            The evaluation of our predictive models is based on precision, recall, F1-score, and accuracy. These metrics 
+            offer a detailed understanding of how well each model performs in classifying and predicting outcomes.
+        </p>
+        <table class="metrics-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Logistic Regression</td>
+                    <td>93.35%</td>
+                    <td>93%</td>
+                    <td>92%</td>
+                    <td>92%</td>
+                </tr>
+                <tr>
+                    <td>SVM</td>
+                    <td>94.48%</td>
+                    <td>94%</td>
+                    <td>93%</td>
+                    <td>93%</td>
+                </tr>
+                <tr>
+                    <td>KNN</td>
+                    <td>90.65%</td>
+                    <td>89%</td>
+                    <td>89%</td>
+                    <td>89%</td>
+                </tr>
+                <tr>
+                    <td>Random Forest</td>
+                    <td>99.44%</td>
+                    <td>99%</td>
+                    <td>99%</td>
+                    <td>99%</td>
+                </tr>
+                <tr>
+                    <td>XGBoost</td>
+                    <td>99.47%</td>
+                    <td>99%</td>
+                    <td>99%</td>
+                    <td>99%</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            The table above demonstrates that Random Forest and XGBoost exhibit superior performance with nearly perfect metrics, 
+            while Logistic Regression, SVM, and KNN also perform well, showcasing their ability to effectively classify and predict 
+            outcomes. These results reinforce the robustness of the models used in this project.
+        </p>
+    </div>
+</body>
+</html>

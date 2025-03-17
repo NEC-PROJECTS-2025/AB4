@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Table Styling */
+        .results-table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .results-table th, .results-table td {
+            border: 1px solid #ccc;
+            padding: 12px 15px;
+        }
+
+        .results-table th {
+            background-color: #004d99;
+            color: white;
+        }
+
+        .results-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .overall-percentile {
+            font-size: 1.5em;
+            color: #004d99;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .performance {
+            font-size: 1.2em;
+            color: #555;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    {% if results %}
+        <h1>Prediction Results</h1>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in results.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="overall-percentile">
+            Overall Percentile: {{ overall_percentile }}%
+        </div>
+        <div class="performance">
+            Performance: {{ performance }}
+        </div>
+    {% endif %}
+    <br>
+    <a href="{{ url_for('home') }}" class="back-button">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .form-container {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About Project</a>
+        <a href="/index">Predictions</a>
+        <a href="/evaluation">Model Evaluation</a>
+        <a href="/flowchart">Flowchart</a>
+    </div>
+    <div class="form-container">
+        <h1>Predict Student Performance</h1>
+        <form action="/predict" method="post">
+            <input type="number" name="CR_S11" placeholder="CR_S11" required><br>
+            <input type="number" name="BIO_S11" placeholder="BIO_S11" required><br>
+            <input type="number" name="QR_PRO" placeholder="QR_PRO" required><br>
+            <input type="number" name="CR_PRO" placeholder="CR_PRO" required><br>
+            <input type="number" name="CC_PRO" placeholder="CC_PRO" required><br>
+            <input type="number" name="ENG_PRO" placeholder="ENG_PRO" required><br>
+            <input type="number" name="G_SC" placeholder="G_SC" required><br>
+            <input type="number" name="2ND_DECILE" placeholder="2ND_DECILE" required><br>
+            <input type="number" name="QUARTILE" placeholder="QUARTILE" required><br>
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
